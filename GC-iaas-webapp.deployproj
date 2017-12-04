@@ -29,6 +29,7 @@
     <None Include="azuredeploy.parameters.json" />
     <None Include="azuredeploy1.json" />
     <None Include="azuredeploy2.json" />
+    <None Include="azuredeploy21.json" />
     <None Include="azuredeploy3.json" />
     <None Include="azuredeploy4.json" />
     <None Include="custom-scripts\accountmanagementprincipals.ps1" />
@@ -67,6 +68,7 @@
     <None Include="nestedtemplates\preparingSQLAO.json" />
     <None Include="nestedtemplates\preparingSqlServerAObypass.json" />
     <None Include="nestedtemplates\provisionAndConfigureAD.json" />
+    <None Include="nestedtemplates\provisionAndConfigureADEncryption.json" />
     <None Include="nestedtemplates\provisioningApplicationGateway.json" />
     <None Include="nestedtemplates\provisioningAutoAccOMSWorkspace.json" />
     <None Include="nestedtemplates\provisioningAutomationSchedule.json" />
