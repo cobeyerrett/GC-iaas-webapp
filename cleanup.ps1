@@ -8,7 +8,7 @@ Param(
 
 
 
-Remove-AzureRmResourceGroup -Name $resourceGroupName -Force 
+Remove-AzureRmResourceGroup -Name $resourceGroupName -Force -ErrorAction SilentlyContinue
 
 
 $AADs = (Get-AzureRmADApplication -DisplayNameStartWith $aadAppName);
