@@ -148,7 +148,7 @@
         "name": "[parameters('adPDCNicName')]",
         "type": "Microsoft.Network/networkInterfaces",
         "location": "[parameters('location')]",
-        "apiVersion": "2015-06-15",
+        "apiVersion": "2017-10-01",
         "tags": {
           "Project": "BluePrint"
         },
@@ -174,7 +174,7 @@
         "name": "[parameters('adBDCNicName')]",
         "type": "Microsoft.Network/networkInterfaces",
         "location": "[parameters('location')]",
-        "apiVersion": "2015-06-15",
+        "apiVersion": "2017-10-01",
         "tags": {
           "Project": "BluePrint"
         },
@@ -197,7 +197,7 @@
         }
       },
       {
-          "apiVersion": "2016-03-30",
+          "apiVersion": "2017-03-30",
           "type": "Microsoft.Compute/virtualMachines",
           "name": "[parameters('adPDCVMName')]",
           "location": "[parameters('location')]",
@@ -260,7 +260,7 @@
           "resources": []
       },
       {
-          "apiVersion": "2016-03-30",
+          "apiVersion": "2017-03-30",
           "type": "Microsoft.Compute/virtualMachines",
           "name": "[parameters('adBDCVMName')]",
           "location": "[parameters('location')]",
@@ -325,7 +325,7 @@
         {
             "type": "Microsoft.Compute/virtualMachines/extensions",
             "name": "[concat(parameters('adPDCVMName'),'/PDCBaselineDSC')]",
-            "apiVersion": "2015-06-15",
+            "apiVersion": "2017-03-30",
             "tags": {
                 "Project": "BluePrint"
             },
