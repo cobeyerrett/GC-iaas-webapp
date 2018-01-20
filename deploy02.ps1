@@ -9,8 +9,8 @@ $subscriptionId = '60b6165a-8669-47a2-860c-6ef475127364'
 $parameters=@{
     workspaceRegion = "canadacentral"
     environmentName ="AzureCloud"
-    keyVaultName = "GCKeystoreUser3"
-    keyVaultResourceGroupName = "GCbluePrintUser3"
+    keyVaultName = "GCKeystoreUser2"
+    keyVaultResourceGroupName = "GCbluePrintUser2"
     domainName = "GCblueprint.local"
     configureSQLAO = "yes"
     environmentPrefix = "prod"
@@ -39,7 +39,22 @@ $timestamp = Get-Date -Format "yyyy-MM-dd_hh-mm-ss"
 #
 #
 #
-New-AzureRmResourceGroupDeployment -Name "D_$timestamp" -ResourceGroupName GCbluePrintUser3 `
--TemplateFile .\azuredeploy.json -TemplateParameterObject $parameters `
+New-AzureRmResourceGroupDeployment -Name "D_$timestamp" -ResourceGroupName GCbluePrintUser2 `
+-TemplateFile .\azuredeploy01.json -TemplateParameterObject $parameters `
 -Mode Incremental -DeploymentDebugLogLevel ResponseContent -Verbose 
 
+Write-Host "Sleeping for 20 seconds..." -ForegroundColor Yellow					
+Start-Sleep 20 #sleep for 20 seconds
+#
+# Provision AD VMs
+#
+New-AzureRmResourceGroupDeployment -Name "D_$timestamp" -ResourceGroupName GCbluePrintUser2 `
+-TemplateFile .\azuredeploy02.json -TemplateParameterObject $parameters `
+-Mode Incremental -DeploymentDebugLogLevel ResponseContent -Verbose 
+
+#
+# Provision the rest
+#
+New-AzureRmResourceGroupDeployment -Name "D_$timestamp" -ResourceGroupName GCbluePrintUser2 `
+-TemplateFile .\azuredeploy03.json -TemplateParameterObject $parameters `
+-Mode Incremental -DeploymentDebugLogLevel ResponseContent -Verbose 
