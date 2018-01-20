@@ -17,11 +17,11 @@ $parameters=@{
     numberOfWebInstances = 2
     useExistingKek = "kek"
    # encryptionEnabled = true
-    adVMSize = "Standard_DS1"
-    sqlVMSize = "Standard_DS1"
-    webVMSize = "Standard_DS1"
-    mgtVMSize = "Standard_DS1"
-    witnessVMSize = "Standard_DS1"
+    adVMSize = "Standard_D2_v2"
+    sqlVMSize = "Standard_D2_v2"
+    webVMSize = "Standard_D2_v2"
+    mgtVMSize = "Standard_D2_v2"
+    witnessVMSize = "Standard_D2_v2"
     sqlStorageAccountType = "Standard_GRS"
     dcStorageAccountType = "Standard_GRS"
     webStorageAccountType = "Standard_GRS"
@@ -33,6 +33,7 @@ $parameters=@{
     gatewaySkuName = "WAF_Medium"
 }
 
+#Get-AzureRmComputeResourceSku | where {$_.Locations.Contains("eastus")}
 
 $timestamp = Get-Date -Format "yyyy-MM-dd_hh-mm-ss"
 New-AzureRmResourceGroupDeployment -Name "D_$timestamp" -ResourceGroupName GCbluePrintUser1 `
