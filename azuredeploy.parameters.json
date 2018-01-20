@@ -27,7 +27,7 @@
       "value": "kek"
     },
     "encryptionEnabled": {
-      "value": true
+      "value": "true"
     },
     "adVMSize": {
       "value": "Standard_D2_v2"

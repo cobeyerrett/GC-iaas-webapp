@@ -373,7 +373,7 @@
         "RDPNAT": "RDP",
         "SQLAOProbe": "SQLAlwaysOnEndPointProbe",
       "omsSettings": {
-        "workspaceRegion": "[parameters('workspaceRegion')]",
+        "workspaceRegion": "canadacentral",
         "serviceTier": "PerNode",
         "dataRetention": 365
       },

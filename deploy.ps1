@@ -2,12 +2,12 @@
 # deploy.ps1
 #
 
-Login-AzureRmAccount
+#Login-AzureRmAccount
 
 $subscriptionId = '60b6165a-8669-47a2-860c-6ef475127364'
 
 $parameters=@{
-    workspaceRegion = "eastus2"
+    workspaceRegion = "canadacentral"
     environmentName ="AzureCloud"
     keyVaultName = "GCKeystoreUser1"
     keyVaultResourceGroupName = "GCbluePrintUser1"
@@ -16,12 +16,12 @@ $parameters=@{
     environmentPrefix = "prod"
     numberOfWebInstances = 2
     useExistingKek = "kek"
-    encryptionEnabled = "enabled"
-    adVMSize = "Standard_D2_v2"
-    sqlVMSize = "Standard_D2_v2"
-    webVMSize = "Standard_D2_v2"
-    mgtVMSize = "Standard_D2_v2"
-    witnessVMSize = "Standard_D2_v2"
+   # encryptionEnabled = true
+    adVMSize = "Standard_DS1"
+    sqlVMSize = "Standard_DS1"
+    webVMSize = "Standard_DS1"
+    mgtVMSize = "Standard_DS1"
+    witnessVMSize = "Standard_DS1"
     sqlStorageAccountType = "Standard_GRS"
     dcStorageAccountType = "Standard_GRS"
     webStorageAccountType = "Standard_GRS"
