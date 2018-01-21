@@ -6,13 +6,13 @@
       "value": "AzureCloud"
     },
     "keyVaultName": {
-      "value": "GCKeystoreUser1"
+      "value": "GCBluePrint4321"
     },
     "keyVaultResourceGroupName": {
-      "value": "GCbluePrintUser1"
+      "value": "GCBluePrint"
     },
     "domainName": {
-      "value": "GCblueprint.local"
+      "value": "gc.local"
     },
     "configureSQLAO": {
       "value": "yes"
