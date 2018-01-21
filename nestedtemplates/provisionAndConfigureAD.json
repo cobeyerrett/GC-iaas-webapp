@@ -166,7 +166,7 @@
             }
           ],
           "networkSecurityGroup": {
-            "id": "[parameters('dcNSGid')]"
+            //"id": "[parameters('dcNSGid')]"
           }
         }
       },
@@ -186,7 +186,7 @@
                 "privateIPAllocationMethod": "Static",
                 "privateIPAddress": "[parameters('adBDCNICIPAddress')]",
                 "subnet": {
-                  "id": "[parameters('dcSubnetRef')]"
+                  //"id": "[parameters('dcSubnetRef')]"
                 }
               }
             }
