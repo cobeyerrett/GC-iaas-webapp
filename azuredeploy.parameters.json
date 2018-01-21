@@ -2,6 +2,9 @@
   "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
+    "workspaceRegion": {
+      "value" : "canadacentral"
+    },
     "environmentName": {
       "value": "AzureCloud"
     },
@@ -27,22 +30,22 @@
       "value": "kek"
     },
     "encryptionEnabled": {
-      "value": "true"
+      "value": true
     },
     "adVMSize": {
       "value": "Standard_D2_v2"
     },
     "sqlVMSize": {
-      "value": "Standard_DS3_v2"
+      "value": "Standard_D2_v2"
     },
     "webVMSize": {
-      "value": "Standard_DS1_v2"
+      "value": "Standard_D2_v2"
     },
     "mgtVMSize": {
-      "value": "Standard_DS2_v2"
+      "value": "Standard_D2_v2"
     },
     "witnessVMSize": {
-      "value": "Standard_D1_v2"
+      "value": "Standard_D2_v2"
     },
     "sqlStorageAccountType": {
       "value": "Standard_GRS"
