@@ -10,8 +10,8 @@ $subscriptionId = '3a4af7b3-b7ac-463d-9940-1d80445961a8'
 $parameters=@{
     workspaceRegion = "canadacentral"
     environmentName ="AzureCloud"
-    keyVaultName = "GCKeystoreUser1"
-    keyVaultResourceGroupName = "GCbluePrintUser1"
+    keyVaultName = "GCKeystoreUser2"
+    keyVaultResourceGroupName = "GCbluePrintUser2"
     domainName = "GCblueprint.local"
     configureSQLAO = "yes"
     environmentPrefix = "prod"
@@ -40,7 +40,7 @@ $timestamp = Get-Date -Format "yyyy-MM-dd_hh-mm-ss"
 #
 #
 #
-New-AzureRmResourceGroupDeployment -Name "D_$timestamp" -ResourceGroupName GCbluePrintUser1 `
+New-AzureRmResourceGroupDeployment -Name "D_$timestamp" -ResourceGroupName GCbluePrintUser2 `
 -TemplateFile .\azuredeploy.json -TemplateParameterObject $parameters `
 -Mode Incremental -DeploymentDebugLogLevel ResponseContent -Verbose 
 
