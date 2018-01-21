@@ -164,10 +164,10 @@
                 }
               }
             }
-          ]
-          //"networkSecurityGroup": {
-            //"id": "[parameters('dcNSGid')]"
-          //}
+          ],
+          "networkSecurityGroup": {
+            "id": "[parameters('dcNSGid')]"
+          }
         }
       },
       {
@@ -190,10 +190,10 @@
                 }
               }
             }
-          ]
-          //"networkSecurityGroup": {
-          //  "id": "[parameters('dcNSGid')]"
-          //}
+          ],
+          "networkSecurityGroup": {
+            "id": "[parameters('dcNSGid')]"
+          }
         }
       },
       {
