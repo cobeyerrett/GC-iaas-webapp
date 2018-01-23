@@ -39,6 +39,13 @@
       "type": "string"
     }
   },
+  "variables": {
+    "dnsServersArray": [
+      "[parameters('adPDCNICIPAddress')]",
+      "[parameters('adBDCNICIPAddress')]"
+
+    ]
+  },
   "resources": [
     {
       "comments": "Load Balancer NSG",
@@ -545,7 +552,7 @@
           ]
         },
         "dhcpOptions": {
-          "dnsServers": "{[parameters('adPDCNICIPAddress'),parameters('adBDCNICIPAddress')}"
+          "dnsServers": "[variables('dnsServersArray')]"
         },
         "subnets": "[parameters('subnets')]"
       }
