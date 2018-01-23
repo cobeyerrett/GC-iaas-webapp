@@ -31,6 +31,12 @@
     },
     "appGatewayAddressRange": {
       "type": "string"
+    },
+    "adPDCNICIPAddress": {
+      "type": "string"
+    },
+    "adBDCNICIPAddress": {
+      "type": "string"
     }
   },
   "resources": [
@@ -537,6 +543,9 @@
           "addressPrefixes": [
             "[parameters('virtualNetworkAddressRange')]"
           ]
+        },
+        "dhcpOptions": {
+          "dnsServers": "{[parameters('adPDCNICIPAddress'),parameters('adBDCNICIPAddress')}"
         },
         "subnets": "[parameters('subnets')]"
       }

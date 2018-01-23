@@ -10,14 +10,14 @@ $subscriptionId = '3a4af7b3-b7ac-463d-9940-1d80445961a8'
 $parameters=@{
     workspaceRegion = "canadacentral"
     environmentName ="AzureCloud"
-    keyVaultName = "GCBluePrint4321"
+    keyVaultName = "GCBluePrintKV83923"
     keyVaultResourceGroupName = "GCBluePrint"
     domainName = "gc.local"
     configureSQLAO = "yes"
     environmentPrefix = "prod"
     numberOfWebInstances = 2
     useExistingKek = "kek"
-   # encryptionEnabled = true
+    #encryptionEnabled = "true"
     adVMSize = "Standard_D2_v2"
     sqlVMSize = "Standard_D2_v2"
     webVMSize = "Standard_D2_v2"
@@ -40,7 +40,11 @@ $timestamp = Get-Date -Format "yyyy-MM-dd_hh-mm-ss"
 #
 #
 #
+#New-AzureRmResourceGroupDeployment -Name "D_$timestamp" -ResourceGroupName GCBluePrint `
+#-TemplateFile .\azuredeploy.json -TemplateParameterObject $parameters `
+#-Mode Incremental -DeploymentDebugLogLevel ResponseContent  
+
 New-AzureRmResourceGroupDeployment -Name "D_$timestamp" -ResourceGroupName GCBluePrint `
--TemplateFile .\azuredeploy.json -TemplateParameterObject $parameters `
--Mode Incremental -DeploymentDebugLogLevel ResponseContent  
+-TemplateFile .\azuredeploy.json -TemplateParameterFile ".\azuredeploy.parameters.json" `
+-Mode Incremental -DeploymentDebugLogLevel None   
 

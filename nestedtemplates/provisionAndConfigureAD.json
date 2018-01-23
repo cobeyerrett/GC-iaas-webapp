@@ -507,7 +507,10 @@
         "count": "[length(variables('vmNames').VMs)]"
       },
       "dependsOn": [
-
+        "[concat('Microsoft.Compute/virtualMachines/', parameters('adPDCVMName'))]",
+        "[Concat('Microsoft.Compute/virtualMachines/',parameters('adBDCVMName'))]",
+        "Microsoft.Resources/deployments/UpdatingDNSwithBackupADVM",
+        "Microsoft.Resources/deployments/UpdatingDNStoPrimaryADVM"
       ],
       "properties": {
         "mode": "Incremental",
@@ -525,6 +528,7 @@
         }
       }
     }
+
   ],
   "outputs": {}
 }

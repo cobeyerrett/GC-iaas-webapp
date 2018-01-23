@@ -800,6 +800,12 @@
           },
           "appGatewayAddressRange": {
             "value": "[variables('subnets').appGateway.properties.addressPrefix]"
+          },
+          "adPDCNICIPAddress": {
+            "value": "[variables('vmSettings').dc.ipAddressPDC]"
+          },
+          "adBDCNICIPAddress": {
+            "value": "[variables('vmSettings').dc.ipAddressBDC]"
           }
         }
       }
@@ -937,7 +943,9 @@
       "apiVersion": "2015-01-01",
       "dependsOn": [
         "Microsoft.Resources/deployments/ProvisionAvailabilitySets",
-        "Microsoft.Resources/deployments/ProvisionStorageAccounts"
+        "Microsoft.Resources/deployments/ProvisionStorageAccounts",
+        "Microsoft.Resources/deployments/ProvisionRecoveryServicesVault",
+        "Microsoft.Resources/deployments/ProvisionCustomBackup"
       ],
       "properties": {
         "mode": "Incremental",
