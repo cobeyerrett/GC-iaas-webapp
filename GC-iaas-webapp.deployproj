@@ -35,6 +35,7 @@
     <None Include="custom-scripts\setPasswordPolicy.ps1" />
     <None Include="custom-scripts\settimezonelogsize.ps1" />
     <None Include="custom-scripts\SQL0CustomCMD.sql" />
+    <Content Include="CustomScripts\RestartPrimaryDC.ps1" />
     <None Include="deploy.ps1" />
     <None Include="Deployment.targets">
       <Visible>False</Visible>
@@ -63,6 +64,7 @@
     <None Include="nestedtemplates\preparingSQLAO.json" />
     <None Include="nestedtemplates\preparingSqlServerAObypass.json" />
     <None Include="nestedtemplates\provisionAndConfigureAD.json" />
+    <None Include="nestedtemplates\provisionAndConfigureADBackup.json" />
     <None Include="nestedtemplates\provisionAndConfigureADEncryption.json" />
     <None Include="nestedtemplates\provisioningApplicationGateway.json" />
     <None Include="nestedtemplates\provisioningAutoAccOMSWorkspace.json" />
