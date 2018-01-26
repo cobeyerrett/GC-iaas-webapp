@@ -17,18 +17,25 @@
   },
   "resources": [
     {
-        "type": "Microsoft.Compute/availabilitySets",
-        "name": "[parameters('adAvailabilitySetName')]",
-        "apiVersion": "2015-06-15",
-        "tags": {
-            "Project": "BluePrint"
-        },
-        "location": "[parameters('location')]"
+      "type": "Microsoft.Compute/availabilitySets",
+      "name": "[parameters('adAvailabilitySetName')]",
+      "apiVersion": "2017-03-30",
+      "tags": {
+        "Project": "BluePrint"
+      },
+      "sku": {
+        "name": "Aligned"
+      },
+      "location": "[parameters('location')]",
+      "properties": {
+        "platformFaultDomainCount": "2",
+        "platformUpdateDomainCount": "2"
+      }
     },
     {
         "type": "Microsoft.Compute/availabilitySets",
         "name": "[parameters('sqlAvailabilitySetName')]",
-        "apiVersion": "2015-06-15",
+        "apiVersion": "2017-03-30",
         "tags": {
             "Project": "BluePrint"
         },
@@ -41,7 +48,7 @@
     {
         "type": "Microsoft.Compute/availabilitySets",
         "name": "[parameters('webAvailabilitySetName')]",
-        "apiVersion": "2015-06-15",
+        "apiVersion": "2017-03-30",
         "tags": {
             "Project": "BluePrint"
         },
