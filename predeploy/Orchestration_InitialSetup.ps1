@@ -168,8 +168,8 @@ function Generate-Cert() {
 function orchestration
 {
 	Param(
-		[string]$environmentName = "AzureCloud",
-		[string]$location = "CanadaCentral",
+		[string]$environmentName = "StatCanCloud",
+		[string]$location = "CanadaEast",
 		[Parameter(Mandatory=$true)]
 		[string]$subscriptionId,
 		[Parameter(Mandatory=$true)]
